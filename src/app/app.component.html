@@ -2,8 +2,8 @@
   <section> 
     <form (ngSubmit)="onSubmit()">
       <h2>Login With OTP</h2>
-      <label for="email_mobile">Enter your Email id/Mobile</label>
-      <input id="email_mobile" type="text"  [disabled]="otpSectionVisible" placeholder="Enter Email id/Mobile"/>
+      <label for="email_mobile" class="text-left">Enter your Mobile No.</label>
+      <input id="email_mobile" type="text" name="mobile" [disabled]="otpSectionVisible" placeholder="Enter Mobile" [(ngModel)]="mobile"/>
       <button type="submit" >Send OTP</button>
       <!-- <a>Didn't get? Resend OTP</a> -->
     </form>
