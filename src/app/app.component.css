@@ -47,7 +47,7 @@ input:focus{
     border-color: #805ad5;
     box-shadow: 0 0 5px rgba(128, 90, 213, 0.5);
 }
-button {
+.send-btn {
   background: linear-gradient(to right, #6b46c1, #4a90e2); /* Purple to Blue */
   color: white; /* Text color */
   padding: 10px 20px; /* Spacing */
@@ -57,10 +57,12 @@ button {
   font-weight: bold; /* Bold text */
   cursor: pointer; /* Pointer on hover */
   transition: all 0.3s ease; /* Smooth hover effect */
-  width: 80%;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
 }
 
-button:hover {
+.send-btn:hover {
   background: linear-gradient(to right, #805ad5, #4299e1); /* Slightly brighter gradient */
   transform: scale(1.05); /* Subtle zoom on hover */
 }
@@ -87,11 +89,13 @@ form h1 {
     margin-top: 10px;
     border-radius: 5px;
   }
-  
-  button {
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  .resend-btn{
+    color: blue;
+    
+  }
+  .resend-btn:hover{
+    scale:calc(1.01);
+    transition: 1s ease-out;
   }
   .otp-div{
     z-index: 0;
