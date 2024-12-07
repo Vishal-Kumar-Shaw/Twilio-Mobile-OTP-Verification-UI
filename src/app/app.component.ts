@@ -19,15 +19,31 @@ export class AppComponent {
   mobile: string = '';
   otp: string = '';
   otpSectionVisible: boolean = false; // Flag to control OTP input section
+  isTimerRunning: boolean = false;
+  countdown: number = 0;
 
   constructor(private toastr: ToastrService,private apiService: ApiServiceService,private http: HttpClient ) { }
+  private startTimer(counter:number){
+    this.isTimerRunning = true;
+    this.countdown = counter;
 
+    const interval = setInterval(() => {
+        this.countdown--;
+        if(this.countdown<=0){
+          clearInterval(interval);
+          this.isTimerRunning = false;
+        }
+    }, 1000)
+  }
   onSubmit() {
       if(this.mobile){
+        this.isTimerRunning=true;
+        this.startTimer(30);
         this.apiService.requestOTP(this.mobile).subscribe({
           next: (response) =>{
             console.log('OTP sent successfully', response);
             this.otpSectionVisible = true;
+           
           },
           error: (err) =>{
             console.error('Error Sending OTP', err);
@@ -35,7 +51,6 @@ export class AppComponent {
           }
         })
       }
-      
   }
 
   submitOtp() {
