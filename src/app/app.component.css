@@ -1,51 +1,56 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-main{
-    height: 100vw;
-    background: linear-gradient(to right, #9f7aea, #ed64a6, #f56565); /* Purple, Pink, Red */
-    display: flex; /* Enable Flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove default margin */
+main {
+  height: 100vw;
+  background: linear-gradient(
+    to right,
+    #9f7aea,
+    #ed64a6,
+    #f56565
+  ); /* Purple, Pink, Red */
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
 }
 form {
-    background-color: #f9f9f9; /* Light background color for form */
-    padding: 20px; /* Spacing inside the form */
-    border-top-left-radius: 20px;  /* Top-left corner */
-    border-top-right-radius: 20px; /* Top-right corner */
-     /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    text-align: center; /* Center align form content */
-    width: 300px; /* Set a fixed width */
-    position: relative;
-    z-index: 1;
-  }
-h2{
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 25px;
+  background-color: #f9f9f9; /* Light background color for form */
+  padding: 20px; /* Spacing inside the form */
+  border-top-left-radius: 20px; /* Top-left corner */
+  border-top-right-radius: 20px; /* Top-right corner */
+  /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center align form content */
+  width: 300px; /* Set a fixed width */
+  position: relative;
+  z-index: 1;
 }
-label{
-    margin-bottom: 20px;
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
-input{
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+label {
+  margin-bottom: 20px;
 }
-input:focus{
-    outline: none;
-    border-color: #805ad5;
-    box-shadow: 0 0 5px rgba(128, 90, 213, 0.5);
+.input-class {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+input:focus {
+  outline: none;
+  border-color: #805ad5;
+  box-shadow: 0 0 5px rgba(128, 90, 213, 0.5);
 }
 .send-btn {
   background: linear-gradient(to right, #6b46c1, #4a90e2); /* Purple to Blue */
@@ -63,73 +68,81 @@ input:focus{
 }
 
 .send-btn:hover {
-  background: linear-gradient(to right, #805ad5, #4299e1); /* Slightly brighter gradient */
+  background: linear-gradient(
+    to right,
+    #805ad5,
+    #4299e1
+  ); /* Slightly brighter gradient */
   transform: scale(1.05); /* Subtle zoom on hover */
 }
 form h1 {
-    font-size: 2rem; /* Large heading size */
-    font-weight: 700; /* Bold text */
-    color: #4a4a4a; /* Neutral dark gray */
-    text-align: center; /* Center-align the text */
-    margin-bottom: 20px; /* Space below the heading */
-    letter-spacing: 1px; /* Slightly spaced letters */
-    text-transform: uppercase; /* Uppercase for a formal look */
-    background: linear-gradient(to right, #9f7aea, #ed64a6); /* Gradient text */
-    -webkit-background-clip: text; /* Clip background to text */
-    -webkit-text-fill-color: transparent; /* Makes the text itself transparent */
-  }
+  font-size: 2rem; /* Large heading size */
+  font-weight: 700; /* Bold text */
+  color: #4a4a4a; /* Neutral dark gray */
+  text-align: center; /* Center-align the text */
+  margin-bottom: 20px; /* Space below the heading */
+  letter-spacing: 1px; /* Slightly spaced letters */
+  text-transform: uppercase; /* Uppercase for a formal look */
+  background: linear-gradient(to right, #9f7aea, #ed64a6); /* Gradient text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Makes the text itself transparent */
+}
 
-  /* Fade-in transition for OTP section */
+/* Fade-in transition for OTP section */
 .transition-all {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  input {
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-  .resend-btn{
-    color: blue;
-    
-  }
-  .resend-btn:hover{
-    scale:calc(1.01);
-    transition: 1s ease-out;
-  }
-  .otp-div{
-    z-index: 0;
-    width: 300px; 
-    /* border: 1px solid red; */
-    background-color: #f9f9f9; /* Light background color for form */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    padding: 20px;
-    padding-top: 5px;
-    position: relative;
-    margin-top: 0px;
-    opacity: 0;
-    transform: translateY(-230px); /* Start off the screen */
-    transition: transform 1s ease, opacity 1s ease; 
-    border-bottom-left-radius: 20px;  /* Top-left corner */
-    border-bottom-right-radius: 20px; /* Top-right corner */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
-  }
-  .otp-div label{
-    margin-top: 5px;
-    font-size: 20px;
-    font-weight: bold;
-  }
+input {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.resend-btn {
+  color: blue;
+}
+.resend-btn:hover {
+  scale: calc(1.01);
+  transition: 2s ease-out;
+}
+.otp-div {
+  z-index: 0;
+  width: 300px;
+  /* border: 1px solid red; */
+  background-color: #f9f9f9; /* Light background color for form */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  padding-top: 5px;
+  position: relative;
+  margin-top: 0px;
+  opacity: 0;
+  transform: translateY(-230px); /* Start off the screen */
+  transition: transform 1s ease, opacity 1s ease;
+  border-bottom-left-radius: 20px; /* Top-left corner */
+  border-bottom-right-radius: 20px; /* Top-right corner */
+}
+.otp-div label {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
 .slide-down {
-    /* margin-top: 230px; */
-    opacity: 1;
-    transform: translateY(0); 
+  /* margin-top: 230px; */
+  opacity: 1;
+  transform: translateY(0);
 }
-.otp-div input{
-    margin-top: 0px;
+.otp-div input {
+  margin-top: 0px;
 }
- 
-  
+span {
+  font-size: 10px;
+}
+#country-select{
+  width: 31.5%;
+  height: 100%;
+  padding-inline: 0;
+}

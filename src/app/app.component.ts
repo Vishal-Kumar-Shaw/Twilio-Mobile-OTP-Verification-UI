@@ -6,6 +6,8 @@ import { ToastrModule, ToastrService } from 'ngx-toastr'; // Optional for toast 
 import { CommonModule } from '@angular/common';
 import { ApiServiceService } from './api-service.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { countries, IcountryCode } from '../data/countryCode';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -21,6 +23,8 @@ export class AppComponent {
   otpSectionVisible: boolean = false; // Flag to control OTP input section
   isTimerRunning: boolean = false;
   countdown: number = 0;
+  selectedCountry: string = '+91';
+  countries:IcountryCode[] = countries;
 
   constructor(private toastr: ToastrService,private apiService: ApiServiceService,private http: HttpClient ) { }
   private startTimer(counter:number){

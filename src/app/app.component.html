@@ -1,25 +1,63 @@
 <main>
-  <section> 
+  <section>
     <form (ngSubmit)="onSubmit()">
       <h2>Login With OTP</h2>
       <label for="email_mobile" class="text-left">Enter your Mobile No.</label>
-      <input id="email_mobile" type="text" name="mobile" [disabled]="otpSectionVisible" placeholder="Enter 10 digit Mobile No." [(ngModel)]="mobile"/>
-      <button type="submit" class="block send-btn" [disabled]="otpSectionVisible">Send OTP</button>
-      <p class="inline-block">Didn't get OTP? <button class="resend-btn" (click)="onSubmit()" [disabled]="isTimerRunning">Resend OTP</button><span *ngIf="isTimerRunning"> (Wait {{ countdown }}s)</span></p>
+      <div class="flex flex-row items-center gap-2 justify-between">
+        <select id="country-select" class="input-class" [(ngModel)]="selectedCountry">
+          <option class="option" *ngFor="let country of countries" [value]="country.code">
+            {{ country.code }} - {{ country.name }} 
+          </option>
+        </select>
+        <input
+          id="email_mobile"
+          type="text"
+          class="input-class"
+          name="mobile"
+          [disabled]="otpSectionVisible"
+          placeholder="Enter 10 digit Mobile No."
+          [(ngModel)]="mobile"
+        />
+      </div>
+      <button
+        type="submit"
+        class="block send-btn"
+        [disabled]="otpSectionVisible"
+      >
+        Send OTP
+      </button>
+      <p class="inline-block">
+        Didn't get OTP?
+        <button
+          class="resend-btn"
+          (click)="onSubmit()"
+          [disabled]="isTimerRunning"
+        >
+          Resend OTP</button
+        ><span *ngIf="isTimerRunning"> (Wait {{ countdown }}s)</span>
+      </p>
     </form>
-  <!-- OTP Input Section -->
-   
-    <div [ngClass]="{'slide-down': otpSectionVisible}" class="otp-div" >
+    <!-- OTP Input Section -->
+
+    <div [ngClass]="{ 'slide-down': otpSectionVisible }" class="otp-div">
       <label for="otp" class="block text-sm font-medium text-gray-700 mt-5">
         Enter OTP
       </label>
-      <input id="otp" type="text" [(ngModel)]="otp" name="otp" required class="border p-2 rounded"/>
+      <input
+        id="otp"
+        type="text"
+        [(ngModel)]="otp"
+        name="otp"
+        required
+        class="border p-2 rounded"
+      />
       <!-- Submit OTP Button -->
-      <button (click)="submitOtp()" class="mt-4 bg-gradient-to-r from-blue-500 to-green-500 text-white py-2 px-4 rounded-md">
+      <button
+        (click)="submitOtp()"
+        class="mt-4 bg-gradient-to-r from-blue-500 to-green-500 text-white py-2 px-4 rounded-md"
+      >
         Submit OTP
       </button>
     </div>
-   
-  
   </section>
 </main>

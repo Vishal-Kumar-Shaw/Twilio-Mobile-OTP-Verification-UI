@@ -1,4 +1,4 @@
-interface IcountryCode{
+export interface IcountryCode{
     name:string,
     code:string
 }
