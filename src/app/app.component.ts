@@ -40,10 +40,10 @@ export class AppComponent {
     }, 1000)
   }
   onSubmit() {
-      if(this.mobile){
+      if(this.mobile && this.selectedCountry){
         this.isTimerRunning=true;
         this.startTimer(30);
-        this.apiService.requestOTP(this.mobile).subscribe({
+        this.apiService.requestOTP(`${this.selectedCountry}${this.mobile}`).subscribe({
           next: (response) =>{
             console.log('OTP sent successfully', response);
             this.otpSectionVisible = true;
@@ -59,8 +59,8 @@ export class AppComponent {
 
   submitOtp() {
     // Simulate OTP submission action
-    if(this.mobile && this.otp){
-      this.apiService.verifyOTP(this.mobile, this.otp).subscribe({
+    if(this.selectedCountry && this.mobile && this.otp){
+      this.apiService.verifyOTP(this.selectedCountry+this.mobile, this.otp).subscribe({
         next: (response) =>{
           console.log("OTP Verified Successfully", response);
         },

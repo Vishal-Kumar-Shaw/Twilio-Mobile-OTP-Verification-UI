@@ -4,7 +4,7 @@
       <h2>Login With OTP</h2>
       <label for="email_mobile" class="text-left">Enter your Mobile No.</label>
       <div class="flex flex-row items-center gap-2 justify-between">
-        <select id="country-select" class="input-class" [(ngModel)]="selectedCountry">
+        <select name="country" id="country-select" class="input-class" [(ngModel)]="selectedCountry">
           <option class="option" *ngFor="let country of countries" [value]="country.code">
             {{ country.code }} - {{ country.name }} 
           </option>
@@ -54,7 +54,7 @@
       <!-- Submit OTP Button -->
       <button
         (click)="submitOtp()"
-        class="mt-4 bg-gradient-to-r from-blue-500 to-green-500 text-white py-2 px-4 rounded-md"
+        class="send-btn mt-4 bg-gradient-to-r from-blue-500 to-green-500 text-white py-2 px-4 rounded-md"
       >
         Submit OTP
       </button>
